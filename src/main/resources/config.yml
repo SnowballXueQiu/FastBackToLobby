@@ -13,6 +13,10 @@ language: "en_US"
 # 启用调试模式
 debug: false
 
+# Force proxy mode (useful for Velocity without bungeecord: true)
+# 强制代理模式 (适用于不需要设置 bungeecord: true 的 Velocity)
+force-proxy-mode: false
+
 # Cooldown in seconds (0 to disable)
 # 冷却时间（秒）（0为禁用）
 cooldown: 3
@@ -33,3 +37,10 @@ commands:
   - "lobby"
   - "leave"
   - "hub"
+
+# Note for Velocity users:
+# If you're using Velocity and don't want to set bungeecord: true in spigot.yml,
+# you can enable 'force-proxy-mode: true' above to bypass proxy detection.
+# Velocity 用户注意：
+# 如果你使用 Velocity 且不想在 spigot.yml 中设置 bungeecord: true，
+# 可以启用上面的 'force-proxy-mode: true' 来绕过代理检测。

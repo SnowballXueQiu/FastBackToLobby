@@ -40,10 +40,15 @@ class FastBackToLobby : JavaPlugin() {
         // 注册命令
         registerCommands()
         
-        // 检查是否为代理服务器环境
-        if (!server.spigot().config.getBoolean("settings.bungeecord", false)) {
-            logger.warning(languageManager.getMessage("plugin.bungeecord-warning"))
-            logger.warning(languageManager.getMessage("plugin.bungeecord-instruction"))
+        // 检查代理服务器环境配置
+        val isBungeeCordEnabled = server.spigot().config.getBoolean("settings.bungeecord", false)
+        val isForceProxyMode = configManager.isForceProxyMode()
+        
+        if (!isBungeeCordEnabled && !isForceProxyMode) {
+            logger.warning(languageManager.getMessage("plugin.proxy-warning"))
+            logger.warning(languageManager.getMessage("plugin.proxy-instruction"))
+        } else if (isForceProxyMode) {
+            logger.info(languageManager.getMessage("plugin.force-proxy-enabled"))
         }
         
         logger.info(languageManager.getMessage("plugin.enabled"))

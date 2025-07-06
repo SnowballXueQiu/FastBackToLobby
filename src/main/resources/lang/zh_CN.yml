@@ -34,5 +34,8 @@ help:
 plugin:
   enabled: "FastBackToLobby 插件已启用！"
   disabled: "FastBackToLobby 插件已禁用！"
+  proxy-warning: "警告：未检测到代理服务器环境！"
+  proxy-instruction: "BungeeCord 用户：在 spigot.yml 中设置 'bungeecord: true'。Velocity 用户：在 config.yml 中启用 'force-proxy-mode: true'。"
+  force-proxy-enabled: "强制代理模式已启用 - 跳过自动代理检测。"
   bungeecord-warning: "警告：spigot.yml 中未启用 BungeeCord！"
   bungeecord-instruction: "请在 spigot.yml 的 settings 部分设置 'bungeecord: true'。"

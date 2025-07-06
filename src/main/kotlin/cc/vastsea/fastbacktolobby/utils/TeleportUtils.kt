@@ -56,17 +56,35 @@ object TeleportUtils {
      * @return 是否在代理环境中
      */
     private fun isProxyEnvironment(): Boolean {
-        val server = FastBackToLobby.instance.server
+        val plugin = FastBackToLobby.instance
+        val server = plugin.server
+        
+        // 检查配置文件中是否强制启用代理模式
+        if (plugin.configManager.isForceProxyMode()) {
+            plugin.configManager.debug("Force proxy mode enabled in config")
+            return true
+        }
         
         // 检查是否启用了BungeeCord
         if (server.spigot().config.getBoolean("settings.bungeecord", false)) {
+            plugin.configManager.debug("BungeeCord mode detected in spigot.yml")
+            return true
+        }
+        
+        // 检查Velocity相关的环境变量或系统属性
+        if (System.getProperty("velocity.native.enabled") != null ||
+            System.getProperty("velocity.forwarding.secret") != null) {
+            plugin.configManager.debug("Velocity environment detected")
             return true
         }
         
         // 检查是否有相关的代理插件
         val pluginManager = server.pluginManager
         if (pluginManager.isPluginEnabled("ViaVersion") || 
-            pluginManager.isPluginEnabled("ProtocolLib")) {
+            pluginManager.isPluginEnabled("ProtocolLib") ||
+            pluginManager.isPluginEnabled("VelocityForward") ||
+            pluginManager.isPluginEnabled("ModernForwarding")) {
+            plugin.configManager.debug("Proxy-related plugins detected")
             return true
         }
         
@@ -75,12 +93,14 @@ object TeleportUtils {
             val onlineMode = server.onlineMode
             if (!onlineMode) {
                 // 通常代理服务器会将子服务器设置为offline-mode
+                plugin.configManager.debug("Offline mode detected, assuming proxy environment")
                 return true
             }
         } catch (e: Exception) {
             // 忽略异常
         }
         
+        plugin.configManager.debug("No proxy environment detected")
         return false
     }
     

@@ -43,6 +43,10 @@ class ConfigManager(private val plugin: FastBackToLobby) {
         }
     }
     
+    fun isForceProxyMode(): Boolean {
+        return config.getBoolean("force-proxy-mode", false)
+    }
+    
     fun debug(message: String) {
         if (isDebugEnabled()) {
             plugin.logger.info("[DEBUG] $message")

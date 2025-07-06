@@ -49,5 +49,8 @@ status:
 plugin:
   enabled: "FastBackToLobby has been enabled!"
   disabled: "FastBackToLobby has been disabled!"
+  proxy-warning: "Warning: No proxy environment detected!"
+  proxy-instruction: "For BungeeCord: set 'bungeecord: true' in spigot.yml. For Velocity: enable 'force-proxy-mode: true' in config.yml."
+  force-proxy-enabled: "Force proxy mode is enabled - bypassing automatic proxy detection."
   bungeecord-warning: "Warning: BungeeCord is not enabled in spigot.yml!"
   bungeecord-instruction: "Please set 'bungeecord: true' in spigot.yml settings section."
