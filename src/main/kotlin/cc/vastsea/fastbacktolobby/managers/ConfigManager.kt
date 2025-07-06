@@ -1,6 +1,6 @@
-package com.example.fastbacktolobby.managers
+package cc.vastsea.fastbacktolobby.managers
 
-import com.example.fastbacktolobby.FastBackToLobby
+import cc.vastsea.fastbacktolobby.FastBackToLobby
 import org.bukkit.configuration.file.FileConfiguration
 
 class ConfigManager(private val plugin: FastBackToLobby) {

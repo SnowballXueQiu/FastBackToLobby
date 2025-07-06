@@ -1,4 +1,4 @@
-package com.example.fastbacktolobby.managers
+package cc.vastsea.fastbacktolobby.managers
 
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap

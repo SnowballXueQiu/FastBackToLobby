@@ -1,9 +1,9 @@
-package com.example.fastbacktolobby
+package cc.vastsea.fastbacktolobby
 
-import com.example.fastbacktolobby.commands.LobbyCommand
-import com.example.fastbacktolobby.managers.ConfigManager
-import com.example.fastbacktolobby.managers.LanguageManager
-import com.example.fastbacktolobby.managers.CooldownManager
+import cc.vastsea.fastbacktolobby.commands.LobbyCommand
+import cc.vastsea.fastbacktolobby.managers.ConfigManager
+import cc.vastsea.fastbacktolobby.managers.LanguageManager
+import cc.vastsea.fastbacktolobby.managers.CooldownManager
 import org.bukkit.plugin.java.JavaPlugin
 
 class FastBackToLobby : JavaPlugin() {

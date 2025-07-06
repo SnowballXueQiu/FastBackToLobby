@@ -1,6 +1,6 @@
-package com.example.fastbacktolobby.utils
+package cc.vastsea.fastbacktolobby.utils
 
-import com.example.fastbacktolobby.FastBackToLobby
+import cc.vastsea.fastbacktolobby.FastBackToLobby
 import org.bukkit.entity.Player
 import java.io.ByteArrayOutputStream
 import java.io.DataOutputStream

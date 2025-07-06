@@ -1,7 +1,7 @@
-package com.example.fastbacktolobby.commands
+package cc.vastsea.fastbacktolobby.commands
 
-import com.example.fastbacktolobby.FastBackToLobby
-import com.example.fastbacktolobby.utils.TeleportUtils
+import cc.vastsea.fastbacktolobby.FastBackToLobby
+import cc.vastsea.fastbacktolobby.utils.TeleportUtils
 import org.bukkit.Sound
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
