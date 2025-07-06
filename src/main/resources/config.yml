@@ -5,7 +5,7 @@
 # 大厅服务器名称 (BungeeCord/Velocity 服务器名称)
 lobby-server: "lobby"
 
-# Language setting (cn_ZH, en_US, etc.)
+# Language setting (zh_CN, en_US, etc.)
 # 语言设置 (zh_CN, en_US 等)
 language: "en_US"
 

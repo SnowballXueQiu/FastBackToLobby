@@ -6,9 +6,10 @@ import org.bukkit.Sound
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
+import org.bukkit.command.TabCompleter
 import org.bukkit.entity.Player
 
-class LobbyCommand(private val plugin: FastBackToLobby) : CommandExecutor {
+class LobbyCommand(private val plugin: FastBackToLobby) : CommandExecutor, TabCompleter {
     
     override fun onCommand(sender: CommandSender, command: Command, label: String, args: Array<out String>): Boolean {
         
@@ -150,5 +151,37 @@ class LobbyCommand(private val plugin: FastBackToLobby) : CommandExecutor {
         }
         
         return true
+    }
+    
+    override fun onTabComplete(
+        sender: CommandSender,
+        command: Command,
+        alias: String,
+        args: Array<out String>
+    ): MutableList<String>? {
+        val completions = mutableListOf<String>()
+        
+        // 只为fastbacktolobby命令提供tab补全
+        if (command.name.equals("fastbacktolobby", ignoreCase = true)) {
+            when (args.size) {
+                1 -> {
+                    // 第一个参数的补全选项
+                    val subCommands = mutableListOf<String>()
+                    
+                    if (sender.hasPermission("fastbacktolobby.admin.reload")) {
+                        subCommands.add("reload")
+                    }
+                    
+                    subCommands.add("permissions")
+                    subCommands.add("help")
+                    
+                    // 过滤匹配的命令
+                    val input = args[0].lowercase()
+                    completions.addAll(subCommands.filter { it.startsWith(input) })
+                }
+            }
+        }
+        
+        return completions
     }
 }

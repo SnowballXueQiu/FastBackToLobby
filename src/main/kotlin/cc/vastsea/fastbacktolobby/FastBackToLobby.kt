@@ -62,8 +62,11 @@ class FastBackToLobby : JavaPlugin() {
             getCommand(command)?.setExecutor(lobbyCommand)
         }
         
-        // 注册重载命令
-        getCommand("fastbacktolobby")?.setExecutor(lobbyCommand)
+        // 注册重载命令和tab补全
+        getCommand("fastbacktolobby")?.let { cmd ->
+            cmd.setExecutor(lobbyCommand)
+            cmd.tabCompleter = lobbyCommand
+        }
     }
     
     fun reloadPlugin(): Boolean {
