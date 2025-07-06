@@ -1,0 +1,79 @@
+package com.example.fastbacktolobby
+
+import com.example.fastbacktolobby.commands.LobbyCommand
+import com.example.fastbacktolobby.managers.ConfigManager
+import com.example.fastbacktolobby.managers.LanguageManager
+import com.example.fastbacktolobby.managers.CooldownManager
+import org.bukkit.plugin.java.JavaPlugin
+
+class FastBackToLobby : JavaPlugin() {
+    
+    companion object {
+        lateinit var instance: FastBackToLobby
+            private set
+    }
+    
+    lateinit var configManager: ConfigManager
+        private set
+    
+    lateinit var languageManager: LanguageManager
+        private set
+        
+    lateinit var cooldownManager: CooldownManager
+        private set
+    
+    override fun onEnable() {
+        instance = this
+        
+        // 初始化管理器
+        configManager = ConfigManager(this)
+        languageManager = LanguageManager(this)
+        cooldownManager = CooldownManager()
+        
+        // 加载配置
+        configManager.loadConfig()
+        languageManager.loadLanguage()
+        
+        // 注册BungeeCord消息通道
+        server.messenger.registerOutgoingPluginChannel(this, "BungeeCord")
+        
+        // 注册命令
+        registerCommands()
+        
+        // 检查是否为代理服务器环境
+        if (!server.spigot().config.getBoolean("settings.bungeecord", false)) {
+            logger.warning(languageManager.getMessage("plugin.bungeecord-warning"))
+            logger.warning(languageManager.getMessage("plugin.bungeecord-instruction"))
+        }
+        
+        logger.info(languageManager.getMessage("plugin.enabled"))
+    }
+    
+    override fun onDisable() {
+        logger.info(languageManager.getMessage("plugin.disabled"))
+    }
+    
+    private fun registerCommands() {
+        val lobbyCommand = LobbyCommand(this)
+        
+        // 注册所有配置的命令
+        val commands = configManager.getCommands()
+        commands.forEach { command ->
+            getCommand(command)?.setExecutor(lobbyCommand)
+        }
+        
+        // 注册重载命令
+        getCommand("fastbacktolobby")?.setExecutor(lobbyCommand)
+    }
+    
+    fun reloadPlugin(): Boolean {
+        return try {
+            configManager.loadConfig()
+            languageManager.loadLanguage()
+            true
+        } catch (e: Exception) {
+            logger.severe("Failed to reload plugin: ${e.message}")
+            false
+        }
+    }
+}

@@ -1,0 +1,38 @@
+# 中文语言文件
+# Chinese Language File
+
+# 消息前缀
+prefix: "&8[&6快速返回大厅&8] &r"
+
+# 成功消息
+success:
+  teleporting: "{prefix}&a正在传送到大厅服务器..."
+  teleported: "{prefix}&a已成功传送到大厅！"
+
+# 错误消息
+error:
+  no-permission: "{prefix}&c你没有权限使用此命令！"
+  cooldown: "{prefix}&c请等待 &e{time} &c秒后再使用此命令！"
+  lobby-not-configured: "{prefix}&c大厅服务器未配置！请联系管理员。"
+  teleport-failed: "{prefix}&c传送失败！请稍后重试。"
+  console-cannot-use: "{prefix}&c控制台无法使用此命令！"
+  server-not-found: "{prefix}&c找不到大厅服务器 &e{server}&c！"
+
+# 管理员消息
+admin:
+  config-reloaded: "{prefix}&a配置文件已重新加载！"
+  reload-failed: "{prefix}&c重新加载配置文件失败！"
+
+# 帮助消息
+help:
+  header: "{prefix}&6=== 快速返回大厅帮助 ==="
+  commands: "{prefix}&e可用命令: &f/quit, /l, /lobby, /leave, /hub"
+  description: "{prefix}&7使用这些命令快速返回大厅服务器"
+  footer: "{prefix}&6========================="
+
+# 插件状态消息
+plugin:
+  enabled: "FastBackToLobby 插件已启用！"
+  disabled: "FastBackToLobby 插件已禁用！"
+  bungeecord-warning: "警告：spigot.yml 中未启用 BungeeCord！"
+  bungeecord-instruction: "请在 spigot.yml 的 settings 部分设置 'bungeecord: true'。"

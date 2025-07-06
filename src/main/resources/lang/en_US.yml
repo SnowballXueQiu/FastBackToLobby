@@ -1,0 +1,53 @@
+# English Language File
+# 英文语言文件
+
+# Message prefix
+prefix: "&8[&6FastBackToLobby&8] &r"
+
+# Success messages
+success:
+  teleporting: "{prefix}&aTeleporting to lobby server..."
+  teleported: "{prefix}&aSuccessfully teleported to lobby!"
+
+# Error messages
+error:
+  no-permission: "{prefix}&cYou don't have permission to use this command!"
+  cooldown: "{prefix}&cPlease wait &e{time} &cseconds before using this command again!"
+  lobby-not-configured: "{prefix}&cLobby server is not configured! Please contact an administrator."
+  teleport-failed: "{prefix}&cTeleportation failed! Please try again later."
+  console-cannot-use: "{prefix}&cConsole cannot use this command!"
+  server-not-found: "{prefix}&cLobby server &e{server} &cnot found!"
+  no-reload-permission: "{prefix}&cYou don't have permission to reload configuration!"
+  no-bypass-permission: "{prefix}&cYou don't have permission to bypass cooldown!"
+
+# Admin messages
+admin:
+  config-reloaded: "{prefix}&aConfiguration reloaded successfully!"
+  reload-failed: "{prefix}&cFailed to reload configuration!"
+  permissions-info: "{prefix}&ePermissions Information:"
+  permission-use: "{prefix}&7- &efastbacktolobby.use &7- Use lobby commands"
+  permission-admin: "{prefix}&7- &efastbacktolobby.admin &7- All admin permissions"
+  permission-reload: "{prefix}&7- &efastbacktolobby.admin.reload &7- Reload configuration"
+  permission-bypass: "{prefix}&7- &efastbacktolobby.bypass.cooldown &7- Bypass cooldown"
+  permission-all: "{prefix}&7- &efastbacktolobby.* &7- All permissions"
+
+# Help messages
+help:
+  header: "{prefix}&6=== FastBackToLobby Help ==="
+  commands: "{prefix}&eAvailable commands: &f/quit, /l, /lobby, /leave, /hub"
+  admin-commands: "{prefix}&eAdmin commands: &f/fastbacktolobby reload"
+  description: "{prefix}&7Use these commands to quickly return to lobby server"
+  permissions: "{prefix}&7Use &e/fastbacktolobby permissions &7to view permission info"
+  footer: "{prefix}&6========================="
+
+# Status messages
+status:
+  cooldown-bypassed: "{prefix}&aYou have permission to bypass cooldown!"
+  admin-privileges: "{prefix}&aYou have admin privileges!"
+
+# Plugin status messages
+plugin:
+  enabled: "FastBackToLobby has been enabled!"
+  disabled: "FastBackToLobby has been disabled!"
+  bungeecord-warning: "Warning: BungeeCord is not enabled in spigot.yml!"
+  bungeecord-instruction: "Please set 'bungeecord: true' in spigot.yml settings section."

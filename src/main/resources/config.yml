@@ -1,0 +1,35 @@
+# FastBackToLobby Configuration
+# 快速返回大厅插件配置
+
+# Lobby server name (BungeeCord/Velocity server name)
+# 大厅服务器名称 (BungeeCord/Velocity 服务器名称)
+lobby-server: "lobby"
+
+# Language setting (cn_ZH, en_US, etc.)
+# 语言设置 (zh_CN, en_US 等)
+language: "en_US"
+
+# Enable debug mode
+# 启用调试模式
+debug: false
+
+# Cooldown in seconds (0 to disable)
+# 冷却时间（秒）（0为禁用）
+cooldown: 3
+
+# Enable sound effect when teleporting
+# 传送时启用音效
+enable-sound: true
+
+# Sound effect to play
+# 播放的音效
+sound: "ENTITY_ENDERMAN_TELEPORT"
+
+# Commands that will send player to lobby
+# 将玩家发送到大厅的命令
+commands:
+  - "quit"
+  - "l"
+  - "lobby"
+  - "leave"
+  - "hub"

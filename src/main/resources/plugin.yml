@@ -1,0 +1,62 @@
+name: FastBackToLobby
+version: 1.0.0
+main: cc.vastsea.fastbacktolobby.FastBackToLobby
+api-version: 1.20
+author: Snowball_233
+description: A plugin for quickly returning to lobby server
+website: https://github.com/SnowballXueQiu/FastBackToLobby
+
+commands:
+  quit:
+    description: Return to lobby server
+    usage: /quit
+    aliases: []
+  l:
+    description: Return to lobby server
+    usage: /l
+    aliases: []
+  lobby:
+    description: Return to lobby server
+    usage: /lobby
+    aliases: []
+  leave:
+    description: Return to lobby server
+    usage: /leave
+    aliases: []
+  hub:
+    description: Return to lobby server
+    usage: /hub
+    aliases: []
+  fastbacktolobby:
+    description: FastBackToLobby admin commands
+    usage: /fastbacktolobby [reload|permissions]
+    aliases: [fbtl]
+
+permissions:
+  fastbacktolobby.*:
+    description: Grants all FastBackToLobby permissions
+    default: false
+    children:
+      - fastbacktolobby.use
+      - fastbacktolobby.admin
+      - fastbacktolobby.admin.reload
+      - fastbacktolobby.bypass.cooldown
+  fastbacktolobby.use:
+    description: Allows player to use lobby commands
+    default: true
+  fastbacktolobby.admin:
+    description: Grants all admin permissions
+    default: op
+    children:
+      - fastbacktolobby.admin.reload
+      - fastbacktolobby.bypass.cooldown
+  fastbacktolobby.admin.reload:
+    description: Allows admin to reload plugin configuration
+    default: op
+  fastbacktolobby.bypass.cooldown:
+    description: Allows bypassing command cooldown
+    default: op
+
+# BungeeCord support
+channels:
+  - BungeeCord
