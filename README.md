@@ -37,7 +37,7 @@ A Bukkit/Spigot/Paper plugin for quickly returning to lobby server, supports Bun
 # 大厅服务器名称 (BungeeCord/Velocity 服务器名称)
 lobby-server: "lobby"
 
-# 语言设置 (cn_ZH, en_US 等)
+# 语言设置 (zh_CN, en_US 等)
 language: "en_US"
 
 # 启用调试模式
@@ -89,7 +89,7 @@ commands:
 
 The plugin supports multiple languages, language files are located in `plugins/FastBackToLobby/lang/` directory:
 
-- `cn_ZH.yml` - 简体中文 / Simplified Chinese
+- `zh_CN.yml` - 简体中文 / Simplified Chinese
 - `en_US.yml` - 英语 / English
 
 你可以创建自己的语言文件，文件名格式为 `语言代码.yml`。
